@@ -1,0 +1,12 @@
+2026-10-19 14:15:24.315: [INFO] CurrentProfilePath: C:\Users\BOYITCODER\Downloads\tiny-20-10-vscode\tiny-20-10-vscode\.preview\render-profile\Default
+2026-10-19 14:15:24.315: [INFO] Profiles total count: 1
+2026-10-19 14:15:24.315: [INFO] Profile: name=Profile 1 path=C:\Users\BOYITCODER\Downloads\tiny-20-10-vscode\tiny-20-10-vscode\.preview\render-profile\Default lastActive=2026-10-19T14:15:24.304Z
+2026-10-19 14:15:24.315: [INFO] LastUsedProfileDir: C:\Users\BOYITCODER\Downloads\tiny-20-10-vscode\tiny-20-10-vscode\.preview\render-profile\Default
+2026-10-19 14:15:24.315: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\BOYITCODER\Downloads\tiny-20-10-vscode\tiny-20-10-vscode\.preview\render-profile\Default lastActive=2026-10-19T14:15:24.304Z
+2026-10-19 14:15:24.315: [INFO] OnDoneLoading sync enabled: 0
+2026-10-19 14:15:24.315: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-19 14:15:24.315: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-19 14:15:24.315: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-19 14:15:24.317: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-19 14:15:24.447: [INFO] VisibilityChanged: 0
+2026-10-19 14:15:29.896: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

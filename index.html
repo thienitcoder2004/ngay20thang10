@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff1e9" />
+    <title>Sự thức giấc của Kim Cúc — 20/10</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="texture" aria-hidden="true"></div>
+    <div class="petals" id="petals" aria-hidden="true"></div>
+    <header class="topbar">
+      <span class="brand">✿ <span>Kim Cúc's little world</span></span>
+      <button id="musicBtn" class="music-player" type="button" disabled
+        aria-label="Bật âm: LAVIEM (Drill)" aria-pressed="false">
+        <span class="music-disc" aria-hidden="true">♫</span>
+        <span class="music-copy">
+          <span class="music-title" id="musicTitle">LAVIEM (Drill)</span>
+          <span class="music-status" id="musicStatus" role="status">Bật âm · nghe cùng mình</span>
+        </span>
+        <span class="music-control" id="musicIcon" aria-hidden="true">▶</span>
+      </button>
+    </header>
+    <audio id="backgroundMusic" preload="none" loop></audio>
+    <main class="main">
+      <section class="scene active" id="scene0" aria-label="Màn chào đón">
+        <div class="eyebrow">A LITTLE SURPRISE · 20.10</div>
+        <h1>Có một điều nhỏ xíu<br />dành cho <em>cậu</em>... ♡</h1>
+        <p class="lead">
+          Hôm nay là một ngày thật đặc biệt. Cùng đánh thức Kim Cúc và khám phá
+          món quà nhé!
+        </p>
+        <div
+          class="mascot-wrap"
+          role="img"
+          aria-label="Kim Cúc đang ngủ trên đám mây"
+        >
+          <div class="spark s1">✧</div>
+          <div class="spark s2">✦</div>
+          <div class="spark s3">♡</div>
+          <div class="tiny sleeping">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="tiny-body">
+              <div class="cheek cheek-left"></div>
+              <div class="cheek cheek-right"></div>
+              <div class="eyes sleep"><span></span><span></span></div>
+              <div class="mouth">ᴗ</div>
+              <div class="paw paw-left"></div>
+              <div class="paw paw-right"></div>
+            </div>
+          </div>
+          <div class="cloud"></div>
+          <div class="zzz">z Z z</div>
+        </div>
+        <button class="primary" data-next="1">
+          Đánh thức Kim Cúc <span>→</span>
+        </button>
+        <p class="micro">Chạm nhẹ để bắt đầu ✨</p>
+      </section>
+      <section class="scene" id="scene1" aria-label="Kim Cúc thức dậy">
+        <div class="eyebrow">CHAPTER 01 · HELLO!</div>
+        <h2>Ú òa! Kim Cúc dậy rồi! <span>☀️</span></h2>
+        <p class="lead">
+          Kim Cúc đã đợi cậu lâu lắm rồi đó. Có một khu vườn đang chờ được nở
+          hoa...
+        </p>
+        <div
+          class="mascot-wrap awake-wrap"
+          role="img"
+          aria-label="Kim Cúc vui vẻ thức dậy"
+        >
+          <div class="rays">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="tiny awake">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="tiny-body">
+              <div class="cheek cheek-left"></div>
+              <div class="cheek cheek-right"></div>
+              <div class="eyes open"><span></span><span></span></div>
+              <div class="mouth">ᴗ</div>
+              <div class="paw paw-left"></div>
+              <div class="paw paw-right"></div>
+            </div>
+          </div>
+          <div class="speech">Hôm nay cậu phải thật vui nhé! ♡</div>
+        </div>
+        <button class="primary" data-next="2">
+          Đi cùng Kim Cúc nào <span>→</span>
+        </button>
+      </section>
+      <section class="scene" id="scene2" aria-label="Khu vườn hoa">
+        <div class="eyebrow">CHAPTER 02 · LITTLE GARDEN</div>
+        <h2>Một khu vườn<br /><em>chỉ dành cho cậu</em></h2>
+        <p class="lead">
+          Chạm vào từng nụ hoa để chúng nở nhé!
+          <span id="flowerCount">0/5</span>
+        </p>
+        <div
+          class="garden"
+          id="garden"
+          aria-label="Năm bông hoa có thể chạm để nở"
+        >
+          <div class="garden-ground"></div>
+          <button class="flower f1" aria-label="Nở hoa 1">
+            <span class="flower-head">✿</span><span class="flower-stem"></span
+            ><span class="leaf"></span>
+          </button>
+          <button class="flower f2" aria-label="Nở hoa 2">
+            <span class="flower-head">✿</span><span class="flower-stem"></span
+            ><span class="leaf"></span>
+          </button>
+          <button class="flower f3" aria-label="Nở hoa 3">
+            <span class="flower-head">✿</span><span class="flower-stem"></span
+            ><span class="leaf"></span>
+          </button>
+          <button class="flower f4" aria-label="Nở hoa 4">
+            <span class="flower-head">✿</span><span class="flower-stem"></span
+            ><span class="leaf"></span>
+          </button>
+          <button class="flower f5" aria-label="Nở hoa 5">
+            <span class="flower-head">✿</span><span class="flower-stem"></span
+            ><span class="leaf"></span>
+          </button>
+          <span class="garden-caption"
+            >🌷 Mỗi bông hoa là một lời chúc nhỏ</span
+          >
+        </div>
+        <p class="flower-note" id="flowerNote">
+          Chờ những bông hoa thức giấc...
+        </p>
+        <button id="gardenNext" class="primary" data-next="3" disabled>
+          Tiếp tục hành trình <span>→</span>
+        </button>
+      </section>
+      <section class="scene" id="scene3" aria-label="Món quà bí mật">
+        <div class="eyebrow">CHAPTER 03 · FOR YOU</div>
+        <h2>Cậu có một lá thư! <span>💌</span></h2>
+        <p class="lead">
+          Kim Cúc đã giữ điều này trong lòng rất lâu. Cậu mở ra xem nhé?
+        </p>
+        <button class="envelope" id="envelope" aria-label="Mở thư">
+          <div class="envelope-back"></div>
+          <div class="envelope-note">FOR YOU ♡</div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-heart">♥</div>
+        </button>
+        <p class="micro">Nhấn vào phong thư để mở</p>
+        <div class="letter" id="letter" aria-live="polite">
+          <div class="letter-top">To you, with love ♡</div>
+          <p>Chúc cậu một ngày <strong>20/10</strong> thật rực rỡ!</p>
+          <p>
+            Mong cậu luôn được yêu thương, luôn tự tin với chính mình, và mỗi
+            ngày đều có những lý do nhỏ xíu để mỉm cười.
+          </p>
+          <p>Dù hôm nay có thế nào, đừng quên rằng cậu rất đặc biệt. 🌷</p>
+          <div class="signature">From Kim Cúc, with ♡</div>
+          <button class="primary small" data-next="4">
+            Nhận điều bất ngờ cuối cùng →
+          </button>
+        </div>
+      </section>
+      <section class="scene" id="scene4" aria-label="Lời chúc 20 tháng 10">
+        <div class="eyebrow">HAPPY VIETNAMESE WOMEN'S DAY</div>
+        <div class="final-number">20<span>/</span>10</div>
+        <h2>Chúc mừng ngày<br /><em>Phụ nữ Việt Nam!</em> 🌸</h2>
+        <p class="lead">
+          Chúc cậu luôn hạnh phúc, xinh đẹp theo cách riêng và được trân trọng
+          trong mọi khoảnh khắc.
+        </p>
+        <div class="final-heart">♡</div>
+        <button class="primary" id="replay">Xem lại từ đầu ↻</button>
+        <p class="micro">Made with a little love ✿</p>
+      </section>
+    </main>
+    <footer class="bottom">
+      <span>✿ Made for October 20</span><span id="progress">01 / 05</span>
+    </footer>
+  </body>
+</html>
