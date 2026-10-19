@@ -26,6 +26,6 @@ const MUSIC = {
 };
 ```
 
-Đã gắn file **assets/musics/LAVIEM.mp3**. Nút **Bật âm** phát bài hát trực tiếp trong trang; **Tắt âm** tạm dừng. Nhấn lại để tiếp tục từ vị trí đã dừng. Nhạc lặp lại và tiếp tục khi chuyển màn.
+Đã gắn file **assets/musics/LAVIEM.mp3**. Nhạc tự phát khi mở trang. Nếu trình duyệt chặn tự phát có âm thanh, nhạc sẽ bắt đầu khi người xem chạm vào trang hoặc nhấn Enter/phím cách. Nút **Tắt âm / Bật âm** tạm dừng hoặc tiếp tục từ vị trí đã dừng. Sau khi chủ động tắt, nhạc chỉ bật lại bằng nút này. Nhạc lặp lại và tiếp tục khi chuyển màn.
 
 Để đổi bài, đặt file mới vào `assets/musics` rồi sửa `url` và `title`. Dùng đường dẫn tương đối để hoạt động trên máy tính, điện thoại và khi đưa website lên hosting. Khi sao chép hoặc đăng website, giữ cả thư mục `assets`. Có thể dùng link HTTPS trực tiếp tới file âm thanh; link trang Zing MP3/YouTube/Spotify không phát được trong thẻ audio. Để trống `url` khi chưa chọn bài.

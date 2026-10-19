@@ -74,32 +74,61 @@ function updateMusic(playing, status) {
   musicStatus.textContent = status;
 }
 
-if (musicUrl) {
-  music.src = musicUrl;
-  musicBtn.disabled = false;
-  updateMusic(false, 'Bật âm · nghe cùng mình');
-} else {
-  musicBtn.title = 'Thêm link bài hát tại MUSIC.url trong script.js';
+let autoStartWanted = Boolean(musicUrl);
+
+function stopAutoStart() {
+  autoStartWanted = false;
+  document.removeEventListener('click', retryAutoStart, true);
+  document.removeEventListener('keydown', retryAutoStart, true);
 }
 
-music.addEventListener('playing', () => updateMusic(true, 'Tắt âm · đang phát bài hát'));
+music.addEventListener('playing', () => {
+  stopAutoStart();
+  updateMusic(true, 'Tắt âm · đang phát bài hát');
+});
 music.addEventListener('pause', () => updateMusic(false, 'Bật âm · nghe tiếp bài hát'));
 music.addEventListener('error', () => updateMusic(false, 'Chưa tải được · chạm để thử lại'));
 
-musicBtn.addEventListener('click', async () => {
-  if (!music.paused) {
-    music.pause();
-    return;
-  }
-  musicBtn.disabled = true;
+async function playMusic(automatic = false) {
+  if (!automatic) musicBtn.disabled = true;
   musicStatus.textContent = 'Đang mở giai điệu…';
   try {
     if (music.error) music.load();
     await music.play();
-  } catch {
-    updateMusic(false, 'Chưa phát được · chạm để thử lại');
+  } catch (error) {
+    if (!automatic || autoStartWanted) {
+      updateMusic(false, automatic && error.name === 'NotAllowedError'
+        ? 'Chạm bất kỳ đâu để nghe nhạc'
+        : 'Chưa phát được · chạm để thử lại');
+    }
   } finally {
-    musicBtn.disabled = false;
+    if (!automatic) musicBtn.disabled = false;
   }
+}
+
+function retryAutoStart(event) {
+  if (!autoStartWanted || event.target.closest?.('#musicBtn')) return;
+  if (event.type === 'keydown' && (event.repeat || !['Enter', ' '].includes(event.key))) return;
+  if (music.paused) playMusic(true);
+}
+
+musicBtn.addEventListener('click', () => {
+  stopAutoStart();
+  if (!music.paused) {
+    music.pause();
+    return;
+  }
+  playMusic();
 });
+
+if (musicUrl) {
+  music.src = musicUrl;
+  musicBtn.disabled = false;
+  document.addEventListener('click', retryAutoStart, true);
+  document.addEventListener('keydown', retryAutoStart, true);
+  playMusic(true);
+} else {
+  updateMusic(false, 'Chưa chọn bài hát');
+  musicBtn.title = 'Thêm link bài hát tại MUSIC.url trong script.js';
+}
 petalTimer=setInterval(()=>{if(document.visibilityState==='visible'&&Math.random()>.6)burst(1)},2500);
